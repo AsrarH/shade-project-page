@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SHaDe: 4D Dynamic Scene Reconstruction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>SHaDe: Compact and Consistent Dynamic 3D Reconstruction</h1>
+  <p><strong>Asrar Alruwayqi</strong><br>
+  The Robotics Institute, Carnegie Mellon University</p>
+
+  <p><a href="https://arxiv.org/abs/XXXX">[Paper]</a>
+     <a href="https://github.com/asrarh/shade">[Code]</a></p>
+
+  <img src="assets/method.png" width="100%">
+
+<h2>Abstract</h2>
+<p>
+  We present a novel framework for dynamic 3D scene reconstruction that integrates three key components:
+  an explicit tri-plane deformation field, a view-conditioned canonical radiance field with spherical harmonics (SH) attention,
+  and a temporally-aware latent diffusion prior. Our method encodes 4D scenes using three orthogonal 2D feature planes that evolve
+  over time, enabling efficient and compact spatiotemporal representation. These features are explicitly warped into a canonical space
+  via a deformation offset field, eliminating the need for MLP-based motion modeling.
+</p>
+<p>
+  In canonical space, we replace traditional MLP decoders with a structured SH-based rendering head that synthesizes view-dependent
+  color via attention over learned frequency bands—improving both interpretability and rendering efficiency. To further enhance fidelity
+  and temporal consistency, we introduce a transformer-guided latent diffusion module that refines the tri-plane and deformation features
+  in a compressed latent space. This generative module denoises scene representations under ambiguous or out-of-distribution motion,
+  improving generalization.
+</p>
+<p>
+  Our model is trained in two stages: the diffusion module is first pre-trained independently, and then fine-tuned jointly with the full pipeline
+  using a combination of image reconstruction, diffusion denoising, and temporal consistency losses. We demonstrate state-of-the-art results
+  on synthetic benchmarks, surpassing recent methods such as HexPlane and 4D Gaussian Splatting in visual quality, temporal coherence,
+  and robustness to sparse-view dynamic inputs.
+</p>
+
+
+  <h2>Video</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXXXXX" frameborder="0" allowfullscreen></iframe>
+
+  <h2>BibTeX</h2>
+  <pre>
+@article{alruwayqi2025shade,
+  title={SHaDe: Compact and Consistent Dynamic 3D Reconstruction via Tri-Plane Deformation and Latent Diffusion},
+  author={Alruwayqi, Asrar},
+  journal={arXiv preprint},
+  year={2025}
+}
+  </pre>
+
+  <footer>
+    <p>Website adapted from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.</p>
+  </footer>
+
+</body>
+</html>
